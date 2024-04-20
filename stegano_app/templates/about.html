@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    .header{
+        min-height:100vh;
+        width:100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.8)),url("logo2.jpg");
+       background-position: center;
+        background-size: cover;
+        position:relative;
+        font-family: Poppins;
+        transition: all 1s
+    
+    }
+    nav{
+        display:flex;
+        padding:2% 6%;
+        justify-content:space-between;
+        align-items: center;
+    }
+    nav img{
+        width:160px;
+        border-radius:50px;
+        /* background:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)); */
+    }
+    .nav-links{
+        flex:1;
+        text-align: right;
+    }
+    .nav-links ul li{
+        list-style:none;
+        display:inline-block;
+        padding:8px 12px;
+        position:relative;
+        font-family:Poppins;
+    }
+    .nav-links ul li a{
+        color:white;text-decoration: none;
+        font-size:20px;
+    }
+    .nav-links ul li::after{content:'';
+        width:0%;
+        height:3px;
+        background:white;
+        display:block;
+        margin:auto;
+        transition: 0.5s;
+    }
+    .nav-links ul li:hover::after{
+        width:100%;
+    }
+    .text-box{
+        width:90%;
+        color:white;
+        position:absolute;
+        top:40%;
+       left:50px;
+        transform: translate(-50% -50%);
+       text-align: center;
+    }
+    .text-box h1{
+        font-size:62px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+    }
+    .text-box p{
+        margin:10px 0 40px;
+        font-size:20px;
+        color:white;
+    }
+    
+    .hero{
+        display:inline-block;
+        text-decoration: none;
+        color:white;
+        border:1px solid white;
+        padding:14px 34px;
+        font-size: 15px;
+        background: transparent;
+        position:relative;
+        cursor:pointer;
+        font-family: candara;
+    }
+    .hero:hover{
+        border:1px solid white;
+        background:white;
+        transition:0.6s;
+        color:black;
+        
+    }
+    nav .fa{display:none;}
+    
+    
+    @media (max-width:700px){
+    .text-box h1{font-size:32px;}
+    .text-box p{font-size: 18px;}
+    .nav-links ul li{ color:black;
+        
+        display:block;}
+    .nav-links{
+           position:fixed;
+           background: rgb(50, 50, 134);
+           height:100vh;
+           width:200px;
+           top:0;
+           right: -200px;
+           text-align:left;
+           z-index:2;
+           transition:0.5s;
+          }
+    nav .fa{display:block;
+           color:white;
+           margin:10px;
+           font-size:22px;
+           cursor:pointer;
+          }
+    .nav-links ul{
+        padding:30px;
+       }  
+    
+    .nav-links ul li a{color:white;margin:auto;
+        font-weight:550px;
+        -webkit-text-size-adjust: 100%;
+    }
+    }
+    .footer{
+        width:100%;
+        text-align: center;
+        padding:30px 0;
+        font-family: candara;
+    }
+    .footer h4{font-size:28px;
+        margin-bottom: 20px;
+    margin-top: 15px;
+    font-weight: 600;
+    }
+    .footer p{
+        font-size: 18px;
+        color:black
+    }
+    .icons .fa{
+        color:rgb(50, 50, 134);
+        margin: 0 13px;
+        cursor: pointer;
+        padding:18px 0;
+        font-size: 25px;
+    }
+    
+    .sub-header{
+        height: 50vh;
+        width: 100%;
+        background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("aboutback.jpg") ;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        color:white;
+        font-family: candara;
+    }
+    .sub-header h1{
+        margin-top: 50px;
+    }
+    .about{
+        width:80%;
+        margin: auto;
+        padding-top:80px;
+        padding-bottom: 50px;
+    }
+    .about-col{
+        flex-basis: 48%;
+        padding:30px 2px;
+    }
+    .about-col img{
+        width: 100%;
+        /* width: 480px; */
+        /* height:550px; */
+        box-shadow: gray 0 0 10px;
+    }
+    
+    .about-col h1{
+        padding-bottom:5px;
+    }
+    .about-col p{color:black;
+        font-size: 15px;
+        margin-top: 10px;
+        padding:15px 0 35px;  
+        font-weight: 500;
+        
+    }
+    
+    .red{border:1px solid tomato;
+        background: transparent;
+        color:tomato;
+    }
+    .red:hover{
+        color:white;
+        background-color: tomato;
+    }
+    /*  */
+    
+    .aboutheading{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    padding: 1vh;
+    color: white;
+    font-family: candara;
+    }
+    
+    .menu{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        margin:auto;
+        padding:20px
+        
+    
+    }
+    
+    .sec{
+        display: grid;
+        background: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("image.png");
+        padding:25px;
+        margin:auto;
+        /* justify-content: space-between; */
+        align-items: center;
+        padding-bottom: 2rem;
+        box-sizing: border-box;
+    }
+    .sec h1{
+        padding:10px
+    }
+    .option-buttons {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 20px;
+        padding:20px
+    }
+    .option-buttons button.active{
+        background-color:rgb(231, 231, 59);
+    }
+    .option-buttons button {
+        padding: 12px 24px;
+        cursor: pointer;
+        background-color: rgb(68, 59, 231); /* Blue */
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .option-buttons button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .about2 {
+        width: 60%;
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        background-color:#D0BDF4;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display:grid;
+        place-items: center;
+        align-content: center;
+    }
+    
+    .about2 h2 {
+        color:black;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family:candara
+    }
+    
+    .about2 p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .about2 .option-buttons {
+        margin-bottom: 30px;
+    }
+    
+    .about2 input[type="text"],
+    .about2 input[type="password"],
+    .about2 select {
+        width: calc(100% - 48px); /* Adjust width for padding */
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    .about2 button {
+        padding: 12px 30px;
+        background-color: #8458B3; /* Blue */
+        border: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .about2 button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    
+    #decryptOption button, #encryptOption button{
+        background:black;
+        color:white;
+        padding: 15px;
+        margin:auto;
+        
+    }
+    #decryptOption button:hover, #encryptOption button:hover{
+        background:white;
+        color:black;
+        border:solid black 1px;
+        padding:15px;
+        margin:auto;
+    }
+    
+    /* scroll animate */
+    
+    #hidden{
+        background-color: #131316;
+        color:white;
+        font-family: Poppins;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        min-height: 60vh;
+    }
+    
+    .hi{
+    opacity: 0;
+    transition:all 1s;
+    filter:blur(5px);
+    transform: translateX(-100%);
+    }
+    
+    @media(prefers-reduced-motion){  
+    .hi{
+        opacity: 0;
+        transition:all 1s;
+        } 
+    }
+    .show{
+        opacity: 1;
+        filter:blur(0);
+        transform: translateX(0);
+    }
+    
+    .logos{display: flex;}
+    
+    .logo:nth-child(2){
+        transition-delay: 200ms;
+    }
+    
+    .logo:nth-child(3){
+        transition-delay: 400ms;
+    }
+    .logo:nth-child(4){
+        transition-delay: 600ms;
+    }
+    
+</style>
+<body>
+    {% comment %} {% include "navbar.html" %} {% endcomment %}
+    {% comment %} <section class="sub-header">
+        <nav>
+            <!-- <a href="index.html"><img src="images/logo.jpeg"></a> -->
+            <div class="nav-links" id="navLinks">
+                <i class="fa solid fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="steganography.html">HOME</a></li>
+                    <li><a href="main.html">MAIN</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    
+                    <li><a href="contact2.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa solid fa-bars"onclick="showMenu()"></i>
+        </nav>
+    <h1>About Us</h1>
+</section> {% endcomment %}
+<section class="sub-header">
+    <nav>
+        <a href=""></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fa solid fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about">ABOUT</a></li>    
+                <li><a href="/encryption">ENCRYPTION</a></li>   
+                <li><a href="/decryption">DECRYPTION</a></li>                  
+                <li><a href="/contact">CONTACT</a></li>
+            </ul>
+        </div>
+        <i class="fa solid fa-bars"onclick="showMenu()"></i>
+    </nav>
+    <h1>About Us</h1>
+</section>
+<!-- about us content -->
+<section class="about">
+    <div class="row">
+        <div class="about-col">
+            <h1>Steganography, what is it?
+            </h1>
+            <p>Steganography is the art of hiding secret data in plain sight. It sounds kind of counter-intuitive, but you’d be surprised how effective it is.
+
+                Hiding things such as source code, passwords, IP addresses, and other confidential information in pictures, music, or other random files tends to be the last place anyone would think of finding them.
+                
+                You should note that steganography and cryptography are not mutually exclusive from each other. One may contain elements of the other or both. For example, you could perform steganography with an encryption algorithm or password, as you’ll find out soon.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit commodi sequi corrupti reiciendis in ipsa non dicta quasi voluptas ducimus nihil dolores soluta aperiam repellat asperiores voluptatem, porro accusamus enim.
+           
+        </div>
+        <div class="about-col">
+<!-- <img src="cyber.jpg"> -->
+        </div>
+    </div>
+</section>    
+
+
+<!--Footer-->
+<section class="footer">
+<h4>About Us</h4>
+<p>One stop solution for image steganography at your fingertips</p>
+<div class="icons">
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
+    {% comment %} <a href=https://www.linkedin.com/school/coep-technological-university/?originalSubdomain=in"><i class="fa fa-linkedin"></i></a> {% endcomment %}
+    <i class="fa fa-twitter"></i>
+
+</div>
+
+
+</section>
+    <!--Javascript for toggle menu-->
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+</body>
+</html>
