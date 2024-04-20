@@ -8,7 +8,6 @@ from PIL import Image # importing the Image module from the PIL library.
 import io
 
 # Create your views here.
-
 @login_required
 def index(request):
     return render(request, 'index.html')
@@ -58,7 +57,6 @@ def logoutview(request):
     logout(request)
     return redirect('login')
 
-@login_required
 def hide_text_in_image(image, text):
     data = text.encode('utf-8')
     '''encode('utf-8') on a string, it translates the human-readable 
@@ -67,7 +65,7 @@ def hide_text_in_image(image, text):
     return stepic.encode(image, data)
 #stepic.encode method is called to hide these bytes within the image
 
-@login_required
+
 def encryption_view(request):
     message = ''
     if request.method == 'POST':
@@ -97,7 +95,6 @@ def encryption_view(request):
 
     return render(request, 'encryption.html', {'message': message})
 
-@login_required
 def decryption_view(request):
     text = ''
     if request.method == 'POST':
@@ -121,7 +118,6 @@ def decryption_view(request):
     return render(request, 'decryption.html', {'text': text})
 
 
-@login_required
 def extract_text_from_image(image):
     data = stepic.decode(image)
     # uses the decode function from the stepic library to extract the
