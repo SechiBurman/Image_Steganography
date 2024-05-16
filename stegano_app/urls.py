@@ -7,6 +7,7 @@ urlpatterns = [
     path('login/', views.loginpage, name='login'),
     path('logout/', views.logoutview, name='logout'),
     path('about/', views.about, name='about'),
+    path('download-encrypted-image/', views.download_encrypted_image, name='download_encrypted_image'),
     path('encryption/', views.encryption_view, name='encryption'),
     path('decryption/', views.decryption_view, name='decryption')
 ]

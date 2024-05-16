@@ -8,6 +8,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 *{margin:0;padding:0;
 }
+
 .header{
     min-height:100vh;
     width:100%;
@@ -156,7 +157,7 @@ font-weight: 600;
 .sub-header{
     height: 50vh;
     width: 100%;
-    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("aboutback.jpg") ;
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)) ;
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -711,7 +712,7 @@ nav {
     */
 }
 </style>
-<body>
+<body style="background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("{% static 'images/about.jpeg' %}"); background-position: center; background-size: cover;">
 {% include "navbar.html" %}
     <div class="container mt-5">
         <h1 class="text-center">Encrypt Your Image</h1>
@@ -732,6 +733,13 @@ nav {
    {% if message %}
         <p align="center">{{ message }}</p>
     {% endif %}
+
+    {% if encrypted_image_url %}
+<div align="center">
+    <a href="{% url 'download_encrypted_image' %}?encrypted_image_url={{ encrypted_image_url }}" class="btn btn-success">Download Encrypted Image</a>
+</div>
+{% endif %}
+
     <section class="footer">
         <h4>About Us</h4>
         <p>One stop solution for image steganography at your fingertips</p>
@@ -742,5 +750,6 @@ nav {
             <i class="fa fa-twitter"></i>
         </div>
     </section>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

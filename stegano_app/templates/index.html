@@ -62,6 +62,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
     *{margin:0;padding:0;
     }
+    
     .header{
         min-height:100vh;
         width:100%;
@@ -70,7 +71,12 @@
         background-size: cover;
         position:relative;
         font-family: Poppins;
-        transition: all 1s
+        transition: all 1s;
+        background-image: url("{% static 'images/home.jpeg' %}"); /* Replace 'your-image-url.jpg' with the URL of your image */
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+
     
     }
     nav{
@@ -767,7 +773,7 @@
 </style>
 
 {% comment %} <a href="{% url 'logout' %}"><button style="background: Darker; color: black;" type="submit" class="btn btn-primary">Logout</button></a> {% endcomment %}
-<a href="{% url 'logout' %}"><button style="background: Darker; color: black;" type="submit" class="btn btn-primary">Logout</button></a>
+{% comment %} <a href="{% url 'logout' %}"><button style="background: Darker; color: black;" type="submit" class="btn btn-primary">Logout</button></a> {% endcomment %}
 <body>
     <section class="header">
         <nav>
@@ -779,7 +785,8 @@
                     <li><a href="/about">ABOUT</a></li>    
                     <li><a href="/encryption">ENCRYPTION</a></li>   
                     <li><a href="/decryption">DECRYPTION</a></li>                  
-                    <li><a href="/contact">CONTACT</a></li>
+                    {% comment %} <li><a href="/contact">CONTACT</a></li> {% endcomment %}
+                    <li><a href="{% url 'logout' %}" class="btn btn-primary" style="background: white; color: black;">LOGOUT</a></li>
                 </ul>
             </div>
             <i class="fa solid fa-bars"onclick="showMenu()"></i>
@@ -787,8 +794,7 @@
     
     <div class="text-box">
         <h1>Stego Charter</h1>
-        <p>With world-class faculty, groundbreaking research opportunities,
-         and a diverse group of talented students, it is more than just a place to get an education.</p>
+        <p>Ready to unravel the secrets hidden in plain sight? Step into the world of image steganography and witness the magic of hidden communication. Start your journey today!</p>
         <a href=""class="hero">Visit us to know more</a>
     </div>    
     </section>

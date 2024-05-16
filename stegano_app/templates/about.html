@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,6 +164,10 @@
         text-align: center;
         color:white;
         font-family: candara;
+        background-image: url("{% static 'images/homepage.jpeg' %}"); /* Replace 'your-image-url.jpg' with the URL of your image */
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
     }
     .sub-header h1{
         margin-top: 50px;
@@ -413,7 +418,7 @@
                 <li><a href="/about">ABOUT</a></li>    
                 <li><a href="/encryption">ENCRYPTION</a></li>   
                 <li><a href="/decryption">DECRYPTION</a></li>                  
-                <li><a href="/contact">CONTACT</a></li>
+                {% comment %} <li><a href="/contact">CONTACT</a></li> {% endcomment %}
             </ul>
         </div>
         <i class="fa solid fa-bars"onclick="showMenu()"></i>
@@ -431,7 +436,7 @@
                 Hiding things such as source code, passwords, IP addresses, and other confidential information in pictures, music, or other random files tends to be the last place anyone would think of finding them.
                 
                 You should note that steganography and cryptography are not mutually exclusive from each other. One may contain elements of the other or both. For example, you could perform steganography with an encryption algorithm or password, as you’ll find out soon.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit commodi sequi corrupti reiciendis in ipsa non dicta quasi voluptas ducimus nihil dolores soluta aperiam repellat asperiores voluptatem, porro accusamus enim.
+                Join us on this journey as we delve into the hidden world of steganography, where secrets are concealed in plain sight, waiting to be discovered by those with keen eyes and clever techniques.
            
         </div>
         <div class="about-col">

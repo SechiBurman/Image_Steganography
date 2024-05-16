@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,8 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background:url("./image.png"),no-repeat;
+        background:url("{% static 'images/login.jpeg' %}");
+        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
       
